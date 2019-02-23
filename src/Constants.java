@@ -18,7 +18,9 @@ public interface Constants {
     char GT = '>';
     char LT = '<';
     char EQUAL = '=';
-    String BINARY_OPERATORS = "+-*/%^><=";
+    char AND = '&';
+    char OR = '|';
+    String BINARY_OPERATORS = "+-*/%^><=&|";
 
     // Unary operators
     char MINUS = '~';

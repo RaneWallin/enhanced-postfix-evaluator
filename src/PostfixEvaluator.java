@@ -56,10 +56,14 @@ public class PostfixEvaluator implements Constants {
 
     private int evaluateSingleOperator(char operation, int ... ops) {
         int result = 0;
-        int op1 = ops[0], op2 = 0;
+        int op1 = ops[0], op2 = 0, op3 = 0;
 
-        if (ops.length == 2) {
+        if (ops.length > 1) {
             op2 = ops[1];
+        }
+
+        if (ops.length > 2){
+            op3 = ops[2];
         }
 
         switch (operation) {
@@ -99,6 +103,12 @@ public class PostfixEvaluator implements Constants {
                 break;
             case EQUAL:
                 result = op2 == op1 ? 1 : 0;
+                break;
+            case OR:
+                result = (op1 + op2 != 0) ? 1 : 0;
+                break;
+            case AND:
+                result = (op1 != 0 && op2 != 0) ? 1 : 0;
                 break;
 
         }
