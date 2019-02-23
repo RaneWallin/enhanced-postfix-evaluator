@@ -17,7 +17,8 @@ public interface Constants {
     char POWER = '^';
     char GT = '>';
     char LT = '<';
-    String BINARY_OPERATORS = "+-*/%^><";
+    char EQUAL = '=';
+    String BINARY_OPERATORS = "+-*/%^><=";
 
     // Unary operators
     char MINUS = '~';

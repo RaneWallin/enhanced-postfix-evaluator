@@ -97,6 +97,9 @@ public class PostfixEvaluator implements Constants {
             case LT:
                 result = op2 > op1 ? 1 : 0;
                 break;
+            case EQUAL:
+                result = op2 == op1 ? 1 : 0;
+                break;
 
         }
 
