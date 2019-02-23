@@ -1,3 +1,10 @@
+/*
+ * Rane Wallin
+ * CSC 205
+ *
+ * Postfix evaluator based on PostfixEvaluator.java provided in class assignment
+ */
+
 import java.util.Stack;
 import java.util.Scanner;
 
@@ -8,11 +15,12 @@ public class PostfixEvaluator {
     private final static char DIVIDE   = '/';
     private final static char MODULUS = '%';
     private final static char POWER = '^';
+    private final static String BINARY_OPERATORS = "+-*/%^";
 
     private Stack<Integer> stack;
 
     public PostfixEvaluator() {
-        stack = new Stack<Integer>();
+        stack = new Stack<>();
     }
 
 	public int evaluate(String expr) {
@@ -34,11 +42,14 @@ public class PostfixEvaluator {
         }
 
         parser.close();
-        return (stack.pop());
+
+        if (stack.size() == 1)
+            return (stack.pop());
+        else throw new ArithmeticException();
     }
 
     private boolean isOperator(String token) {
-        return ("+-*/%^".indexOf(token) >= 0);
+        return (BINARY_OPERATORS.indexOf(token) >= 0);
 
     }
 

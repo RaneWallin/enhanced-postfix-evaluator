@@ -1,6 +1,21 @@
+/*
+ * Rane Wallin
+ * CSC 205
+ *
+ * This class is based on the provided class in enhanced postfix evaluator assignment.
+ *
+ * Test cases:
+ * 3 4 * 2 5 + - 4 2 / * (Result: 10)
+ * 17 5 % (Result: 2)
+ * 3 4 ^ (Result: 81)
+ * 5 + (Result: Error)
+ * 1 2 3 + (Result: Error)
+
+ */
+
 import java.util.Scanner;
 
-public class PostfixTester    
+public class PostfixTester implements Constants
 {
     /**
      * Reads and evaluates multiple postfix expressions.
@@ -11,27 +26,30 @@ public class PostfixTester
         int result;
     
         Scanner in = new Scanner(System.in);
+
+        System.out.println(INTRO_MESSAGE);
       
         do
         {  
             PostfixEvaluator evaluator = new PostfixEvaluator();
             
-			System.out.println("Postfix Expression Evaluator - R. Wallin\n\n" +
-			        "Enter a valid post-fix expression one token " +
-							   "at a time with a space between each token (e.g. 5 4 + 3 2 1 - + *)");
-			System.out.println("Each token must be an integer or an operator (+,-,*,/)");
+			System.out.println(START_MESSAGE);
+
             expression = in.nextLine();
 
-            result = evaluator.evaluate(expression);
-            
-            System.out.println();
-            System.out.println("That expression equals " + result);
+            try {
+                result = evaluator.evaluate(expression);
+                System.out.println(RESULT_PREFIX + result);
+            } catch(Exception e) {
+                System.out.println(ERROR_MESSAGE);
+            }
 
-            System.out.print("Evaluate another expression [Y/N]? ");
+            System.out.print(CONTINUE_PROMPT);
+
             again = in.nextLine();
             System.out.println();
         }
-        while (again.equalsIgnoreCase("y"));
+        while (again.equalsIgnoreCase(CONTINUE_ACCEPT));
         
         in.close();
   }
