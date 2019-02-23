@@ -8,7 +8,7 @@ public interface Constants {
     String CONTINUE_ACCEPT = "y";
     String ERROR_MESSAGE = "Invalid postfix expression: ";
     String TOO_MANY_OPERANDS = "Too many operands.";
-    String TOO_MANY_OPERATORS = "Too many operators.";
+    String NOT_ENOUGH_OPERATORS = "Not enough operators.";
     String INVALID_FORMAT = "Invalid format.";
 
     // Binary operators

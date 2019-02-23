@@ -55,7 +55,7 @@ public class PostfixTester implements Constants
                 System.out.println(ERROR_MESSAGE + e.getLocalizedMessage());
             }
             catch(EmptyStackException e) {
-                System.out.println(ERROR_MESSAGE + TOO_MANY_OPERATORS);
+                System.out.println(ERROR_MESSAGE + NOT_ENOUGH_OPERATORS);
             }
             catch(NumberFormatException e) {
                 System.out.println(ERROR_MESSAGE + INVALID_FORMAT);
