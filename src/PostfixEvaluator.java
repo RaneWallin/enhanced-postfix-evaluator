@@ -6,6 +6,8 @@ public class PostfixEvaluator {
     private final static char SUBTRACT = '-';
     private final static char MULTIPLY = '*';
     private final static char DIVIDE   = '/';
+    private final static char MODULUS = '%';
+    private final static char POWER = '^';
 
     private Stack<Integer> stack;
 
@@ -36,8 +38,8 @@ public class PostfixEvaluator {
     }
 
     private boolean isOperator(String token) {
-        return ( token.equals("+") || token.equals("-") || // OR return ("+-*/".indexOf(token) >= 0);
-                 token.equals("*") || token.equals("/") );
+        return ("+-*/%^".indexOf(token) >= 0);
+
     }
 
     private int evaluateSingleOperator(char operation, int op1, int op2) {
@@ -58,6 +60,12 @@ public class PostfixEvaluator {
                 
             case DIVIDE:
                 result = op1 / op2;
+                break;
+            case MODULUS:
+                result = op1 % op2;
+                break;
+            case POWER:
+                result = (int) Math.pow(op1, op2);
         }
 
         return result;

@@ -16,7 +16,8 @@ public class PostfixTester
         {  
             PostfixEvaluator evaluator = new PostfixEvaluator();
             
-			System.out.println("Enter a valid post-fix expression one token " +
+			System.out.println("Postfix Expression Evaluator - R. Wallin\n\n" +
+			        "Enter a valid post-fix expression one token " +
 							   "at a time with a space between each token (e.g. 5 4 + 3 2 1 - + *)");
 			System.out.println("Each token must be an integer or an operator (+,-,*,/)");
             expression = in.nextLine();
