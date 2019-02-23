@@ -42,7 +42,7 @@ public class PostfixEvaluator implements Constants {
 
         if (stack.size() == 1)
             return (stack.pop());
-        else throw new ArithmeticException();
+        else throw new ArithmeticException(TOO_MANY_OPERANDS);
     }
 
     private boolean isBinaryOperator(String token) {
@@ -82,31 +82,40 @@ public class PostfixEvaluator implements Constants {
             case DIVIDE:
                 result = op1 / op2;
                 break;
+
             case MODULUS:
                 result = op1 % op2;
                 break;
+
             case POWER:
                 result = (int) Math.pow(op1, op2);
                 break;
+
             case MINUS:
                 result = op1 * -1;
                 break;
+
             case FACTORIAL:
                 result = 1;
                 for(int i = op1; i > 0; i--) result *= i;
                 break;
+
             case GT:
                 result = op1 > op2 ? 1 : 0;
                 break;
+
             case LT:
                 result = op2 > op1 ? 1 : 0;
                 break;
+
             case EQUAL:
                 result = op2 == op1 ? 1 : 0;
                 break;
+
             case OR:
                 result = (op1 + op2 != 0) ? 1 : 0;
                 break;
+
             case AND:
                 result = (op1 != 0 && op2 != 0) ? 1 : 0;
                 break;

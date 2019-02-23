@@ -6,7 +6,10 @@ public interface Constants {
     String CONTINUE_PROMPT = "Evaluate another expression [Y/N]? ";
     String RESULT_PREFIX = "That expression equals ";
     String CONTINUE_ACCEPT = "y";
-    String ERROR_MESSAGE = "Invalid Postfix Expression!";
+    String ERROR_MESSAGE = "Invalid postfix expression: ";
+    String TOO_MANY_OPERANDS = "Too many operands.";
+    String TOO_MANY_OPERATORS = "Too many operators.";
+    String INVALID_FORMAT = "Invalid format.";
 
     // Binary operators
     char ADD      = '+';

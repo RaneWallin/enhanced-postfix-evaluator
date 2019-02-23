@@ -22,6 +22,7 @@
 
  */
 
+import java.util.EmptyStackException;
 import java.util.Scanner;
 
 public class PostfixTester implements Constants
@@ -49,8 +50,14 @@ public class PostfixTester implements Constants
             try {
                 result = evaluator.evaluate(expression);
                 System.out.println(RESULT_PREFIX + result);
-            } catch(Exception e) {
-                System.out.println(ERROR_MESSAGE);
+            } catch (ArithmeticException e) {
+                System.out.println(ERROR_MESSAGE + e.getLocalizedMessage());
+            }
+            catch(EmptyStackException e) {
+                System.out.println(ERROR_MESSAGE + TOO_MANY_OPERATORS);
+            }
+            catch(NumberFormatException e) {
+                System.out.println(ERROR_MESSAGE + INVALID_FORMAT);
             }
 
             System.out.print(CONTINUE_PROMPT);
