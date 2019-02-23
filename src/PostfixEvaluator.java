@@ -91,6 +91,13 @@ public class PostfixEvaluator implements Constants {
                 result = 1;
                 for(int i = op1; i > 0; i--) result *= i;
                 break;
+            case GT:
+                result = op1 > op2 ? 1 : 0;
+                break;
+            case LT:
+                result = op2 > op1 ? 1 : 0;
+                break;
+
         }
 
         return result;

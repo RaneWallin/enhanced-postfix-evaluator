@@ -14,7 +14,8 @@
  * 5 ~ ~ ~ (Result: -5)
  * 6 ! (Result: 720)
  * 3 ! 4 * 5 3 % - 4 2 ~ / * (Result: -44)
-
+ *5 3 > (Result: 1) Anything non-zero is considered true
+ * 5 3 < (Result: 0) 0 is considered false
  */
 
 import java.util.Scanner;

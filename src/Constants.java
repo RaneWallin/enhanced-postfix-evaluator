@@ -15,7 +15,9 @@ public interface Constants {
     char DIVIDE   = '/';
     char MODULUS = '%';
     char POWER = '^';
-    String BINARY_OPERATORS = "+-*/%^";
+    char GT = '>';
+    char LT = '<';
+    String BINARY_OPERATORS = "+-*/%^><";
 
     // Unary operators
     char MINUS = '~';
