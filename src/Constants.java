@@ -8,4 +8,18 @@ public interface Constants {
     String CONTINUE_ACCEPT = "y";
     String ERROR_MESSAGE = "Invalid Postfix Expression!";
 
+    // Binary operators
+    char ADD      = '+';
+    char SUBTRACT = '-';
+    char MULTIPLY = '*';
+    char DIVIDE   = '/';
+    char MODULUS = '%';
+    char POWER = '^';
+    String BINARY_OPERATORS = "+-*/%^";
+
+    // Unary operators
+    char MINUS = '~';
+    char FACTORIAL = '!';
+    String UNARY_OPERATORS = "~!";
+
 }

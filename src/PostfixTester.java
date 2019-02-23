@@ -10,6 +10,10 @@
  * 3 4 ^ (Result: 81)
  * 5 + (Result: Error)
  * 1 2 3 + (Result: Error)
+ * 12 ~ (Result: -12)
+ * 5 ~ ~ ~ (Result: -5)
+ * 6 ! (Result: 720)
+ * 3 ! 4 * 5 3 % - 4 2 ~ / * (Result: -44)
 
  */
 
