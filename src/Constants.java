@@ -30,4 +30,7 @@ public interface Constants {
     char FACTORIAL = '!';
     String UNARY_OPERATORS = "~!";
 
+    // Ternary operators
+    char CONDITIONAL = '?';
+
 }

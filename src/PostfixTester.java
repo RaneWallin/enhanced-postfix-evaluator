@@ -19,7 +19,8 @@
  * 10 5 & (Result: 1)
  * 5 3 > 2 3 > | (Result: 1)
  * 0 0 | (Result: 0)
-
+ * 5 3 < 2 5 = 1 7 < | | 10 20 ? (Result: 10)
+ * 1 2 ? (Result: Error)
  */
 
 import java.util.EmptyStackException;

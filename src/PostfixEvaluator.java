@@ -17,7 +17,7 @@ public class PostfixEvaluator implements Constants {
     }
 
 	public int evaluate(String expr) {
-        int op1, op2, result = 0;
+        int op1, op2, op3, result = 0;
         String token;
         Scanner parser = new Scanner(expr);
 
@@ -32,6 +32,12 @@ public class PostfixEvaluator implements Constants {
             } else if (isUnaryOperator(token)) {
                 op1 = (stack.pop()).intValue();
                 result = evaluateSingleOperator(token.charAt(0), op1);
+                stack.push(result);
+            } else if (isTernaryOperator(token)) {
+                op3 = (stack.pop()).intValue();
+                op2 = (stack.pop()).intValue();
+                op1 = (stack.pop()).intValue();
+                result = evaluateSingleOperator(token.charAt(0), op1, op2, op3);
                 stack.push(result);
             }
             else
@@ -52,6 +58,10 @@ public class PostfixEvaluator implements Constants {
 
     private boolean isUnaryOperator(String token) {
         return (UNARY_OPERATORS.indexOf(token) >= 0);
+    }
+
+    private boolean isTernaryOperator(String token) {
+        return token.charAt(0) == CONDITIONAL;
     }
 
     private int evaluateSingleOperator(char operation, int ... ops) {
@@ -118,6 +128,10 @@ public class PostfixEvaluator implements Constants {
 
             case AND:
                 result = (op1 != 0 && op2 != 0) ? 1 : 0;
+                break;
+
+            case CONDITIONAL:
+                result = op1 != 0 ? op2 : op3;
                 break;
 
         }
